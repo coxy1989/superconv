@@ -1,0 +1,2 @@
+- config nvidia docker: https://gist.github.com/Brainiarc7/a8ab5f89494d053003454efc3be2d2ef 
+- verify nvidia docker: sudo docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi

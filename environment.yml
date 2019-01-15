@@ -1,0 +1,9 @@
+name: superconv
+channels:
+  - anaconda
+dependencies:
+  - python=3.6
+  - jupyter=1.0.0
+  - tensorflow=1.10.0
+  - seaborn=0.9.0
+

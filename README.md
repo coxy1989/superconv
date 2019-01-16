@@ -1,5 +1,7 @@
 # Superconv
 
+[![CircleCI](https://circleci.com/gh/coxy1989/superconv.svg?style=svg)](https://circleci.com/gh/coxy1989/superconv)
+
 This repository provides an implementation of the *1cycle* learning rate policy as originally described in the paper: *Super-Convergence: Very Fast Training of Neural Networks Using Large Learning Rates* [1]. In addition, it includes a reproduction of the published results on the MNIST dataset.
 
 What's in the box?
@@ -33,7 +35,7 @@ What's in the box?
 |---|---|---|---|
 | 0.01/inv  | 0.9  |  85 | 98.91  |
 | 0.01/rop  | 0.9  |  85 | 98.88  | 
-| 0.01-0.1/5  | 0.95-0.8/5  | **12**  | 99.07  |
+| **0.01-0.1/5**  | **0.95-0.8/5**  | **12**  | **99.07**  |
 | 0.01-0.1/12  | 0.95-0.8/12  | 25  | 99.04  |
 | 0.01-0.1/23  | 0.95-0.8/23  | 50  | 99.03  |
 | 0.02-0.2/40  | 0.95-0.8/40  | 85  | 99.08  |

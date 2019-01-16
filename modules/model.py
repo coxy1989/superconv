@@ -1,4 +1,5 @@
 import tensorflow as tf
+import numpy as np
 
 def gen_model():
     'TODO: docstring'    

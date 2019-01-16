@@ -1,1 +1,42 @@
 # Superconv
+
+This repository provides an implementation of the *1cycle* learning rate policy as originally described in the paper: *Super-Convergence: Very Fast Training of Neural Networks Using Large Learning Rates* [1]. In addition, it includes a reproduction of the published results on the MNIST dataset.
+
+What's in the box?
+
+- [Implementation](https://github.com/coxy1989/superconv/blob/master/modules/callbacks.py) of the *1cycle* learning rate policy.
+- [Port](https://github.com/coxy1989/superconv/blob/master/modules/model.py) of the *LeNet* Caffe model to keras.
+- [Experiments]() which reproduce the published result on MNIST.
+
+*The experiments performed in this repository were conducted on a paperspace instance with a Nvidia Quadro P4000 GPU.*
+
+## Quickstart
+
+1. `git clone git@github.com:coxy1989/superconv.git`
+
+2. `cd superconv` 
+
+3. `conda env create -f environment.yml`
+
+3. `source activate superconv`
+
+4. `jupyter notebook`
+
+### Notebooks
+
+## Results
+
+|  LR/SS/PL |  CM/SS | Epochs  | Accuracy (%)  |
+|---|---|---|---|
+| 0.01/inv  | 0.9  |  85 | 98.91  |
+| 0.01/rop  | 0.9  |  85 | 98.88  | 
+| 0.01-0.1/5  | 0.95-0.8/5  | **12**  | 99.07  |
+| 0.01-0.1/12  | 0.95-0.8/12  | 25  | 99.04  |
+| 0.01-0.1/23  | 0.95-0.8/23  | 50  | 99.03  |
+| 0.02-0.2/40  | 0.95-0.8/40  | 85  | 99.08  |
+
+**Table**: Final accuracy for the MNIST dataset using the LeNet architecture with weight decay of `0.0005` and batch size of `512`. LR = learning rate, SS = stepsize in epochs, where two steps comprise a cycle. CM = cyclical momentum, 'inv' is the [inv](https://github.com/coxy1989/superconv/blob/master/modules/callbacks.py#L44) caffe policy, 'rop' is the [reduce on plateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau) keras policy.
+
+## References
+
+[1] Leslie N. Smith. Super-Convergence: Very Fast Training of Neural Networks Using Large Learning Rates. [arXiv:1708.07120](https://arxiv.org/pdf/1708.07120.pdf), 2017.

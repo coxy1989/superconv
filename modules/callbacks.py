@@ -41,6 +41,41 @@ def _1cycle_lr(iteration_idx:int,
         ramp_min = min_lr * 1e-5
         return ramp_max - ((idx + 1) / ramp_iterations) * (ramp_max - ramp_min)
 
+def _inv_lr(iteration_idx:int, gamma:float, power:float,  base_lr:float):
+    'ported from: https://github.com/BVLC/caffe/blob/master/src/caffe/proto/caffe.proto#L157-L172'
+    return base_lr * (1 + gamma * iteration_idx) ** (- power)
+
+class InvSchedulerCallback(tf.keras.callbacks.Callback):
+    
+    def __init__(self,
+                 gamma:float,
+                 power:float,
+                 base_lr:float):
+        'TODO: docstring'        
+        self.gamma = gamma
+        self.power = power
+        self.base_lr = base_lr
+        self.iteration = 0
+    
+    def on_batch_begin(self, batch, logs=None):
+        'TODO: docstring'        
+        if not hasattr(self.model.optimizer, 'lr'):
+            raise ValueError('Optimizer must have a "lr" attribute.')
+        lr = _inv_lr(self.iteration, self.gamma, self.power, self.base_lr)
+        K.set_value(self.model.optimizer.lr, lr)
+    
+    def on_batch_end(self, batch, logs=None):
+        'TODO: docstring'
+        self.iteration +=1
+       
+    @staticmethod
+    def plot_schedule(iterations:int, gamma:float, power:float,  base_lr:float):
+        'TODO: docstring'   
+        xs = range(iterations)
+        ys = [_inv_lr(i, gamma, power, base_lr) for i in xs]
+        df = pd.DataFrame({'lr' : ys, 'iteration': xs})
+        sns.lineplot(x='iteration', y='lr', data=df)
+
 class OneCycleSchedulerCallback(tf.keras.callbacks.Callback):
     
     def __init__(self,

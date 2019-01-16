@@ -4,6 +4,6 @@ channels:
 dependencies:
   - python=3.6
   - jupyter=1.0.0
-  - tensorflow=1.10.0
+  - tensorflow-gpu=1.12.0
   - seaborn=0.9.0
 

@@ -6,7 +6,7 @@ What's in the box?
 
 - [Implementation](https://github.com/coxy1989/superconv/blob/master/modules/callbacks.py) of the *1cycle* learning rate policy.
 - [Port](https://github.com/coxy1989/superconv/blob/master/modules/model.py) of the *LeNet* Caffe model to keras.
-- [Experiments]() which reproduce the published result on MNIST.
+- [Experiments](https://nbviewer.jupyter.org/github/coxy1989/superconv/tree/master/experiments/) which reproduce the published result on MNIST.
 
 *The experiments performed in this repository were conducted on a paperspace instance with a Nvidia Quadro P4000 GPU.*
 
@@ -24,6 +24,9 @@ What's in the box?
 
 ### Notebooks
 
+- [Experiments](https://nbviewer.jupyter.org/github/coxy1989/superconv/tree/master/experiments/) - reproduce raw results.
+- [Results](https://nbviewer.jupyter.org/github/coxy1989/superconv/blob/master/results/results.ipynb) - calculate run averages.
+
 ## Results
 
 |  LR/SS/PL |  CM/SS | Epochs  | Accuracy (%)  |
@@ -35,7 +38,7 @@ What's in the box?
 | 0.01-0.1/23  | 0.95-0.8/23  | 50  | 99.03  |
 | 0.02-0.2/40  | 0.95-0.8/40  | 85  | 99.08  |
 
-**Table**: Final accuracy for the MNIST dataset using the LeNet architecture with weight decay of `0.0005` and batch size of `512`. LR = learning rate, SS = stepsize in epochs, where two steps comprise a cycle. CM = cyclical momentum, 'inv' is the [inv](https://github.com/coxy1989/superconv/blob/master/modules/callbacks.py#L44) caffe policy, 'rop' is the [reduce on plateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau) keras policy.
+**Table**: Final accuracy for the MNIST dataset using the LeNet architecture with weight decay of `0.0005` and batch size of `512`. Reported final accuracy is an average of 5 runs. LR = learning rate, SS = stepsize in epochs, where two steps comprise a cycle. CM = cyclical momentum, 'inv' is the [inv](https://github.com/coxy1989/superconv/blob/master/modules/callbacks.py#L44) caffe policy, 'rop' is the [reduce on plateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau) keras policy.
 
 ## References
 

@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: continuumio/miniconda
+
+    working_directory: ~/superconv
+
+    steps:
+      - checkout
+
+      - run:
+          name: install dependencies
+          command: |
+            conda env create -f environment.yml
+            source activate superconv
+
+      - run:
+          name: run tests
+          command: |
+            source activate superconv
+            python -m unittest discover -s tests
+

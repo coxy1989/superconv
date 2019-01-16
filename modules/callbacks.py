@@ -26,9 +26,7 @@ def _1cycle_lr(iteration_idx:int,
               min_lr:float,
               max_lr:float):
     'TODO: docstring'
-    if cyc_iterations % 2 != 1:
-        raise ValueError('Even value for `cyc_iterations` implies asymetric step size')
-    mid = (cyc_iterations - 1)/2
+    mid = math.floor((cyc_iterations - 1)/2)
     if iteration_idx == mid: return max_lr
     elif iteration_idx == 0 or iteration_idx == (2 * mid): return min_lr
     elif iteration_idx < cyc_iterations: 

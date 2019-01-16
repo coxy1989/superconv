@@ -21,6 +21,7 @@ class TestSchedulers(unittest.TestCase):
         self.assertEqual(actual, expected)
 
     def test_1cycle_lr(self):
+
         actual = cbs._1cycle_lr(0, 101, 10, 0, 1)
         expected = 0
         self.assertEqual(actual, expected)

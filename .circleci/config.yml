@@ -12,12 +12,12 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            conda env create -f environment.yml
-            source activate superconv
+            conda env create -f cpu_environment.yml
+            source activate cpu_superconv
 
       - run:
           name: run tests
           command: |
-            source activate superconv
+            source activate cpu_superconv
             python -m unittest discover -s tests
 

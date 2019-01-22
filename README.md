@@ -31,16 +31,41 @@ What's in the box?
 
 ## Results
 
+### MNIST
+
+Results on CIFAR10 were are included in the paper. The result below confirms that 'superconvergence' can be observed with a fairly standard configuration and the simple 'LeNet' network architecture.
+
 |  LR/SS/PL |  CM/SS | Epochs  | Accuracy (%)  |
 |---|---|---|---|
-| 0.01/inv  | 0.9  |  85 | 98.91  |
-| 0.01/rop  | 0.9  |  85 | 98.88  | 
-| **0.01-0.1/5**  | **0.95-0.8/5**  | **12**  | **99.07**  |
-| 0.01-0.1/12  | 0.95-0.8/12  | 25  | 99.04  |
-| 0.01-0.1/23  | 0.95-0.8/23  | 50  | 99.03  |
-| 0.02-0.2/40  | 0.95-0.8/40  | 85  | 99.08  |
+| 0.01/inv  | 0.9  |  85 | 98.92  |
+| 0.01/rop  | 0.9  |  85 | 98.85  | 
+| **0.01-0.1/5**  | **0.95-0.8/5**  | **12**  | **99.05**  |
+| 0.01-0.1/12  | 0.95-0.8/12  | 25  | 99.01  |
+| 0.01-0.1/23  | 0.95-0.8/23  | 50  | 99.02  |
+| 0.02-0.2/40  | 0.95-0.8/40  | 85  | 99.07  |
 
-**Table**: Final accuracy for the MNIST dataset using the LeNet architecture with weight decay of `0.0005` and batch size of `512`. Reported final accuracy is an average of 5 runs. LR = learning rate, SS = stepsize in epochs, where two steps comprise a cycle. CM = cyclical momentum, 'inv' is the [inv](https://github.com/coxy1989/superconv/blob/master/modules/callbacks.py#L44) caffe policy, 'rop' is the [reduce on plateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau) keras policy.
+**Table 1**: Final accuracy for the MNIST dataset using the LeNet architecture with weight decay of `0.0005` and batch size of `512`. Reported final accuracy is an average of 5 runs. LR = learning rate, SS = stepsize in epochs, where two steps comprise a cycle. CM = cyclical momentum, 'inv' is the [inv](https://github.com/coxy1989/superconv/blob/master/modules/callbacks.py#L44) caffe policy, 'rop' is the [reduce on plateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau) keras policy.
+
+![](./superconv_mnist.jpg)
+
+**Plot 1**: Accuracy vs epoch for the `CLR(12)`, `CLR(85)`, `INV` and `ROP` results in the preceeding table. 
+
+### CIFAR10
+
+Results on CIFAR10 were are **not** included in the paper. The result below demonstrates 'superconvergence' is **not** observed with a fairly standard configuration and simple 3 layer network. 
+
+|  LR/SS/PL |  CM/SS | Epochs  | Accuracy (%)  |
+|---|---|---|---|
+| 0.01/inv  | 0.9  |  85 | 79.00  |
+| 0.01/rop  | 0.9  |  85 | 80.11  | 
+| 0.01-0.1/5  | 0.95-0.8/5  | 12  | 78.65  |
+| 0.01-0.1/12  | 0.95-0.8/12  | 25  | 78.38  |
+| 0.01-0.1/23  | 0.95-0.8/23  | 50  | 78.15  |
+| 0.02-0.2/40  | 0.95-0.8/40  | 85  | 78.05  |
+
+**Table 2**: Final accuracy on the CIFAR10 dataset with a simple 3 layer architecture, weight decay of `0.003` and batch size of `128`. Reported final accuracy is an average of 5 runs. LR = learning rate, SS = stepsize in epochs, where two steps comprise a cycle. CM = cyclical momentum, 'inv' is the [inv](https://github.com/coxy1989/superconv/blob/master/modules/callbacks.py#L44) caffe policy, 'rop' is the [reduce on plateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau) keras policy.
+
+![](./superconv_cifar10.jpg)
 
 ## References
 

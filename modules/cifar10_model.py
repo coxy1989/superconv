@@ -82,10 +82,10 @@ def prepare_data(mean_image, tf_example):
     image = (image - mean_image) / 255.0
     return image, label
 
-def gen_iterator(filename, mean_image, bs):
+def gen_iterator(filename, mean_image, bs, num_cpus):
     "TODO: docstring"
     ds = tf.data.TFRecordDataset(filename)
     ds = ds.shuffle(100).repeat()
-    ds = ds.map(num_parallel_calls=NUM_CPUS, map_func=partial(prepare_data, mean_image))
+    ds = ds.map(num_parallel_calls=num_cpus, map_func=partial(prepare_data, mean_image))
     ds = ds.batch(bs).prefetch(1)
     return ds.make_one_shot_iterator()

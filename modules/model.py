@@ -1,7 +1,7 @@
 import numpy as np
 import tensorflow as tf
 
-def gen_model():
+def gen_mnist_model():
     'TODO: docstring'    
     return tf.keras.models.Sequential([
         tf.keras.layers.InputLayer(input_shape=(28, 28, 1)),
@@ -19,5 +19,5 @@ def gen_mnist_iterator(x, y, bs):
     'TODO: docstring'    
     x = (x / 255.0).astype(np.float32)[..., tf.newaxis]
     y = tf.one_hot(y, 10)
-    ds = tf.data.Dataset.from_tensor_slices((x, y)).shuffle(x.shape[0]).batch(bs).repeat()
+    ds = tf.data.Dataset.from_tensor_slices((x, y)).shuffle(x.shape[0]).repeat().batch(bs).prefetch(1)
     return ds.make_one_shot_iterator()

@@ -8,9 +8,10 @@ What's in the box?
 
 - [Implementation](https://github.com/coxy1989/superconv/blob/master/modules/callbacks.py) of the *1cycle* learning rate policy.
 - [Port](https://github.com/coxy1989/superconv/blob/master/modules/model.py) of the *LeNet* Caffe model to keras.
-- [Experiments](https://nbviewer.jupyter.org/github/coxy1989/superconv/tree/master/experiments/) which reproduce the published result on MNIST.
+- [Implementation](https://github.com/coxy1989/superconv/blob/master/modules/cifar10_model.py) of another simple 3 layer net.
+- [Experiments](https://nbviewer.jupyter.org/github/coxy1989/superconv/tree/master/experiments/) which reproduce the published result on MNIST and new experiments on CIFAR10.
 
-*The experiments performed in this repository were conducted on a paperspace instance with a Nvidia Quadro P4000 GPU.*
+*The experiments performed in this repository were conducted on an Ubuntu 18.04 paperspace instance with a Nvidia Quadro P4000 GPU, NVIDIA Driver: 410.48, CUDA 10.0.130-1.*
 
 ## Quickstart
 
@@ -27,7 +28,7 @@ What's in the box?
 ### Notebooks
 
 - [Experiments](https://nbviewer.jupyter.org/github/coxy1989/superconv/tree/master/experiments/) - reproduce raw results.
-- [Results](https://nbviewer.jupyter.org/github/coxy1989/superconv/blob/master/results/results.ipynb) - calculate run averages.
+- [Results](https://nbviewer.jupyter.org/github/coxy1989/superconv/blob/master/results/results.ipynb) - calculate run averages and plot figures.
 
 ## Results
 

@@ -27,7 +27,7 @@ What's in the box?
 ### Notebooks
 
 - [Experiments](https://nbviewer.jupyter.org/github/coxy1989/superconv/tree/master/experiments/) - reproduce raw results.
-- [Results](https://nbviewer.jupyter.org/github/coxy1989/superconv/blob/master/results/results.ipynb) - calculate run averages.
+- [Results](https://nbviewer.jupyter.org/github/coxy1989/superconv/blob/master/results/results.ipynb) - calculate run averages and plot figures.
 
 ## Results
 

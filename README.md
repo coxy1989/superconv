@@ -33,7 +33,7 @@ What's in the box?
 
 ### MNIST
 
-Results on CIFAR10 were are included in the paper. The result below confirms that 'superconvergence' can be observed with a fairly standard configuration and the simple 'LeNet' network architecture.
+Results on MNIST were are included in the paper. The result below confirms that *superconvergence* can be observed with a fairly standard configuration and the simple LeNet network architecture.
 
 |  LR/SS/PL |  CM/SS | Epochs  | Accuracy (%)  |
 |---|---|---|---|
@@ -66,6 +66,8 @@ Results on CIFAR10 were are **not** included in the paper. The result below demo
 **Table 2**: Final accuracy on the CIFAR10 dataset with a simple 3 layer architecture, weight decay of `0.003` and batch size of `128`. Reported final accuracy is an average of 5 runs. LR = learning rate, SS = stepsize in epochs, where two steps comprise a cycle. CM = cyclical momentum, 'inv' is the [inv](https://github.com/coxy1989/superconv/blob/master/modules/callbacks.py#L44) caffe policy, 'rop' is the [reduce on plateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau) keras policy.
 
 ![](./superconv_cifar10.jpg)
+
+**Plot 2**: Accuracy vs epoch for the `CLR(12)`, `CLR(85)`, `INV` and `ROP` results in the preceeding table. 
 
 ## References
 

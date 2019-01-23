@@ -10,7 +10,7 @@ What's in the box?
 - [Port](https://github.com/coxy1989/superconv/blob/master/modules/model.py) of the *LeNet* Caffe model to keras.
 - [Experiments](https://nbviewer.jupyter.org/github/coxy1989/superconv/tree/master/experiments/) which reproduce the published result on MNIST.
 
-*The experiments performed in this repository were conducted on a paperspace instance with a Nvidia Quadro P4000 GPU.*
+*The experiments performed in this repository were conducted on an Ubuntu 18.04 paperspace instance with a Nvidia Quadro P4000 GPU, NVIDIA Driver: 410.48, CUDA 10.0.130-1.*
 
 ## Quickstart
 

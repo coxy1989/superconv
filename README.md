@@ -8,7 +8,7 @@ What's in the box?
 
 - [Implementation](https://github.com/coxy1989/superconv/blob/master/modules/callbacks.py) of the *1cycle* learning rate policy.
 - [Port](https://github.com/coxy1989/superconv/blob/master/modules/model.py) of the *LeNet* Caffe model to keras.
-- [Experiments](https://nbviewer.jupyter.org/github/coxy1989/superconv/tree/master/experiments/) which reproduce the published result on MNIST.
+- [Experiments](https://nbviewer.jupyter.org/github/coxy1989/superconv/tree/master/experiments/) which reproduce the published result on MNIST and new experiments on CIFAR10.
 
 *The experiments performed in this repository were conducted on an Ubuntu 18.04 paperspace instance with a Nvidia Quadro P4000 GPU, NVIDIA Driver: 410.48, CUDA 10.0.130-1.*
 
@@ -33,7 +33,7 @@ What's in the box?
 
 ### MNIST
 
-Results on CIFAR10 were are included in the paper. The result below confirms that 'superconvergence' can be observed with a fairly standard configuration and the simple 'LeNet' network architecture.
+Results on CIFAR10 are included in the paper. The result below confirms that 'superconvergence' can be observed with a fairly standard configuration and the simple 'LeNet' network architecture.
 
 |  LR/SS/PL |  CM/SS | Epochs  | Accuracy (%)  |
 |---|---|---|---|

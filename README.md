@@ -2,12 +2,12 @@
 
 [![CircleCI](https://circleci.com/gh/coxy1989/superconv.svg?style=svg)](https://circleci.com/gh/coxy1989/superconv)
 
-This repository provides an implementation of the *1cycle* learning rate policy as originally described in the paper: *Super-Convergence: Very Fast Training of Neural Networks Using Large Learning Rates* [1]. In addition, it includes a reproduction of the published results on the MNIST dataset.
+This repository provides an implementation of the *1cycle* learning rate policy as originally described in the paper: *Super-Convergence: Very Fast Training of Neural Networks Using Large Learning Rates* [1]. In addition, it includes a reproduction of the published results on MNIST and new experiments on CIFAR10.
 
 What's in the box?
 
 - [Implementation](https://github.com/coxy1989/superconv/blob/master/modules/callbacks.py) of the *1cycle* learning rate policy.
-- [Port](https://github.com/coxy1989/superconv/blob/master/modules/model.py) of the *LeNet* Caffe model to keras.
+- [Port](https://github.com/coxy1989/superconv/blob/master/modules/model.py) of the *LeNet* model which ships with Caffe to keras.
 - [Implementation](https://github.com/coxy1989/superconv/blob/master/modules/cifar10_model.py) of another simple 3 layer net.
 - [Experiments](https://nbviewer.jupyter.org/github/coxy1989/superconv/tree/master/experiments/) which reproduce the published result on MNIST and new experiments on CIFAR10.
 
@@ -25,6 +25,8 @@ What's in the box?
 
 4. `jupyter notebook`
 
+*If you'd like to run the CIFAR10 experiments you can download the tfrecord files used in training from my website by running the get_data.sh script in the /data folder*
+
 ### Notebooks
 
 - [Experiments](https://nbviewer.jupyter.org/github/coxy1989/superconv/tree/master/experiments/) - reproduce raw results.
@@ -34,7 +36,7 @@ What's in the box?
 
 ### MNIST
 
-Results on MNIST were are included in the paper. The result below confirms that *superconvergence* can be observed with a fairly standard configuration and the simple LeNet network architecture.
+The result below confirms that *superconvergence* can be observed with a standard configuration and the simple LeNet network architecture.
 
 |  LR/SS/PL |  CM/SS | Epochs  | Accuracy (%)  |
 |---|---|---|---|
@@ -53,7 +55,7 @@ Results on MNIST were are included in the paper. The result below confirms that 
 
 ### CIFAR10
 
-Results on CIFAR10 were are **not** included in the paper. The result below demonstrates 'superconvergence' is **not** observed with a fairly standard configuration and simple 3 layer network. 
+Results on CIFAR10 were not included in the original paper. The result below demonstrates *superconvergence* is not observed with a standard configuration and simple 3 layer network. I suspect that tuning of the other hyperparamaters is required, since [it can be demonstrated](https://github.com/coxy1989/clr) that rapid convergence on this dataset is achievable with the related *CLR* policy and a similar network architecture. More experimentation is required here, feel free to send a pull request if you perform further experiments.
 
 |  LR/SS/PL |  CM/SS | Epochs  | Accuracy (%)  |
 |---|---|---|---|
